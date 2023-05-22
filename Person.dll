@@ -1,0 +1,60 @@
+using System;
+
+namespace PersonNamespace
+{
+    public class Person
+    {
+        private string name;
+        private string surname;
+        private DateTime dob;
+        private int age;
+        private string status;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public string Surname
+        {
+            get { return surname; }
+            set { surname = value; }
+        }
+        public DateTime Dob
+        {
+            get { return dob; }
+            set 
+            { 
+                dob = value;
+                age = Math.Abs(dob.Year-DateTime.Now.Year);
+            }
+        }
+        public int Age
+        {
+            get { return age; }
+        }
+        public string Status
+        {
+            get 
+            {
+                if (age >= 18)
+                {
+                    status = "Adult";
+                }
+                else if (age >= 13 && age < 18)
+                {
+                    status = "Teenager";
+                }
+                else
+                {
+                    status = "Child";
+                }
+                return status; 
+            }
+            set
+            {
+                status = value;
+            }
+        }
+    }
+}
