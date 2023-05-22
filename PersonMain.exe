@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+using PersonNamespace;
+
+namespace MainPerson
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Person> person = new List<Person>
+            {
+                new Person(){Name = "Katlego", Surname= "Mathisa", Dob=DateTime.Parse("2009/08/19")},
+                new Person(){Name = "Andile", Surname= "Mpisane", Dob=DateTime.Parse("2003/09/22")},
+                new Person(){Name = "Karabo", Surname= "Mabena", Dob=DateTime.Parse("1998/05/01")},
+                new Person(){Name = "Ompile", Surname= "Hendricks", Dob=DateTime.Parse("2019/01/09")},
+                new Person(){Name = "Phumie", Surname= "Ramathekwane", Dob=DateTime.Parse("2015/08/08")},
+            };
+            foreach(var per in person)
+            {
+                WriteLine("\nFullname: "+per.Name+ " " +per.Surname+
+                    "\nDate of Birth: " +per.Dob+
+                    "\nAge: " +per.Age+
+                    "\nStatus: " + per.Status);
+                WriteLine("**********************************************************");
+            }
+            ReadLine();
+        }
+        
+    }
+}
